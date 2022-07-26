@@ -2,14 +2,32 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProductModule } from './product-list/product-list.module';
+import { CartComponent } from './cart/cart.component';
+import { ShippingComponent } from './shipping/shipping.component';
 
 @NgModule({
-  imports: [BrowserModule, ReactiveFormsModule, RouterModule, ProductModule],
-  declarations: [AppComponent, TopBarComponent],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    RouterModule,
+    ProductModule,
+    RouterModule.forRoot([
+      { path: 'cart', component: CartComponent },
+      { path: 'shipping', component: ShippingComponent },
+    ]),
+  ],
+  declarations: [
+    AppComponent,
+    TopBarComponent,
+    CartComponent,
+    ShippingComponent,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
