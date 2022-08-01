@@ -22,11 +22,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     ProductAlertsComponent,
     ProductDetailsComponent,
   ],
-  exports: [
-    ProductListComponent,
-    ProductAlertsComponent,
-    ProductDetailsComponent,
-  ],
+  exports: [ProductListComponent],
 })
 export class ProductModule {}
 
